@@ -1,4 +1,129 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Roboto Slab', serif; }
+
+body {
+    background: #F5F5F5;
+    margin: 0px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.voffset-5{
+    margin-top: 5px;
+}
+.voffset-10{
+    margin-top: 10px;
+}
+
+.container {
+    min-height: 100%;
+    width: 100%;
+}
+
+.main-card{
+    margin: 10px;
+}
+
+.small-card{
+    margin: 10px ;
+}
+
+
+/* mat-card-header{
+    border-bottom: solid 1px #F5F5F5
+
+} */
+
+.error-div{
+    display: flex;  
+    height: 20px;         
+    flex-direction: column;  
+    justify-content: center; 
+    align-items: center; 
+    background: #ffd3d3;
+    width: 100%;
+}
+
+
+  /* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+* {
+
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-family: 'Roboto Slab', serif;
+   
+    /* font-weight: bold; */
+    
+}
+/* .mat-card-header-sk-style{
+    margin-top: 20px;
+     margin-left: -13px;
+     display: flex; 
+    justify-content: space-between;
+    
+} */
+
+/* .mat-k-sk-style{
+     min-height: 741px;
+      margin-top: 6px;
+      margin-left: 6px;
+      margin-right: 6px;
+       margin-bottom: 6px;
+} */
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.content-container {
+    padding: 10px;
+}
+
+/* .mat-form-field {
+    color: rgb(194, 183, 91);
+  }
+ 
+  input.mat-input-element {
+    color: rgb(194, 183, 91);
+  }
+
+  ::ng-deep .mat-form-field-underline, ::ng-deep .mat-form-field-ripple {
+    color: rgb(194, 183, 91);
+    background-color: blue !important;
+  }
+
+  ::ng-deep.mat-form-field.mat-focused .mat-form-field-ripple{
+    background-color: #F2BC4A;
+    color: rgb(194, 183, 91);
+} */

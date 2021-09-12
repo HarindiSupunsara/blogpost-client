@@ -1,0 +1,128 @@
+<div [hidden]="!loading" class="loader">
+  <h5>{{showSignup ? 'Sign Up....':'Sign In....'}}</h5>
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+<div class="container">
+
+  <mat-card class="login-card">
+    <mat-card-header class="center">
+      <mat-card-title>
+        <img mat-carad-image src="assets/images/logo.png" alt="E.W. Balasuriya">
+        <div class="center">
+          <h1 style="font-size: 20px;font-family: 'Roboto Slab', serif;"> {{showSignup ? 'Create Account':'Sign in'}}
+          </h1>
+        </div>
+      </mat-card-title>
+      <mat-card-subtitle class="login-card-sub"></mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form class="login-form" [formGroup]="loginForm" *ngIf="!showSignup">
+        <mat-form-field class="full-width">
+          <input matInput formControlName="userName" placeholder="User Name / Email or Mobile">
+          <mat-error *ngIf="userName?.touched && userName?.invalid && userName?.errors?.required">
+            Username / Email or Mobile is
+            <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width margin-10">
+          <input matInput formControlName="password" type="password" placeholder="Password">
+          <mat-error *ngIf="password?.touched && password?.invalid && password?.errors?.required">
+            Password is
+            <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <div style="color: red;">
+          {{error}}
+        </div>
+      </form>
+
+      <form class="signup-form" [formGroup]="signupForm" *ngIf="showSignup">
+        <div fxLayout="row" fxLayout.sm="row" fxLayout.xs="column" fxLayoutWrap fxLayoutAlign="right">
+          <div fxFlex="50" style="padding-right: 5px;">
+            <mat-form-field class="full-width">
+              <input matInput formControlName="fName" placeholder="First Name">
+              <mat-error *ngIf="fName?.touched && fName?.invalid && fName?.errors?.required">
+                First Name is
+                <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="50">
+            <mat-form-field class="full-width">
+              <input matInput formControlName="lName" placeholder="Last Name">
+              <mat-error *ngIf="lName?.touched && lName?.invalid && lName?.errors?.required">
+                Last Name is
+                <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div fxLayout="row" fxLayout.sm="row" fxLayout.xs="column" fxLayoutWrap fxLayoutAlign="right">
+          <div fxFlex="100">
+
+
+            <mat-form-field class="full-width">
+              <input matInput type="email" formControlName="email" placeholder="Email">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div fxLayout="row" fxLayout.sm="row" fxLayout.xs="column" fxLayoutWrap fxLayoutAlign="right">
+          <div fxFlex="50" style="padding-right: 5px;">
+
+            <mat-form-field class="full-width">
+              <mat-label>Mobile</mat-label>
+              <span matPrefix>+94 &nbsp;</span>
+              <input type="tel" matInput formControlName="mobile" placeholder="777777777" maxlength="9">
+            </mat-form-field>
+
+          </div>
+          <div fxFlex="50">
+            <mat-form-field class="full-width">
+              <input matInput formControlName="userName" placeholder="User Name">
+            </mat-form-field>
+
+          </div>
+        </div>
+
+        <div fxLayout="row" fxLayout.sm="row" fxLayout.xs="column" fxLayoutWrap fxLayoutAlign="right">
+          <div fxFlex="50" style="padding-right: 5px;">
+
+            <mat-form-field class="full-width">
+              <input matInput formControlName="password" type="password" placeholder="Password">
+              <mat-error *ngIf="SPassword?.touched && SPassword?.invalid && SPassword?.errors?.required">
+                Password is
+                <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="50">
+
+            <mat-form-field class="full-width">
+              <input matInput formControlName="passwordConfirm" type="password" placeholder="Confirm Password">
+              <mat-error *ngIf="passwordConfirm?.touched && SPassword != passwordConfirm">
+                Password not Matched
+              </mat-error>
+            </mat-form-field>
+
+          </div>
+        </div>
+
+        <div style="color: red;padding-bottom: 5px;">
+          {{sError}}
+        </div>
+      </form>
+
+    </mat-card-content>
+    <mat-card-footer>
+      <button mat-raised-button (click)="signin()" class="signinBtn" *ngIf="!showSignup">Sign in</button>
+      <button mat-raised-button (click)="signup()" class="signinBtn-1" *ngIf="showSignup">Sign up</button>
+      <button mat-button (click)="createaccount()" class="signupBtn" *ngIf="!showSignup"> Create Account</button>
+      <button mat-button (click)="signinInstead()" class="signupBtn-1" *ngIf="showSignup"> Sign in instead</button>
+    </mat-card-footer>
+  </mat-card>
+</div>

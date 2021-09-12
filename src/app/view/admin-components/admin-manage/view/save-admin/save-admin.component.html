@@ -1,0 +1,97 @@
+<div [hidden]="!loading" class="loader">
+    <h5>Loading...</h5>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+<div class="content-container" [ngClass]="{'disabled': loading == true}">
+    <mat-card class="example-card" style="border-top: 5px solid #F2BC4A;">
+        <mat-card-header>
+            <mat-card-title>ADMIN USER</mat-card-title>
+            <mat-card-subtitle>{{screenName}}</mat-card-subtitle>
+            <span class="spacer"></span>
+        </mat-card-header>
+        <mat-card-content>
+            <form class="signup-form" [formGroup]="signupForm">
+                <div fxLayout="row" fxLayout.sm="row" fxLayout.xs="column" fxLayoutWrap fxLayoutAlign="right">
+                  <div fxFlex="50" style="padding-right: 5px;">
+                    <mat-form-field class="full-width">
+                      <input matInput formControlName="fName" placeholder="First Name">
+                      <mat-error *ngIf="fName?.touched && fName?.invalid && fName?.errors?.required">
+                        First Name is
+                        <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div fxFlex="50">
+                    <mat-form-field class="full-width">
+                      <input matInput formControlName="lName" placeholder="Last Name">
+                      <mat-error *ngIf="lName?.touched && lName?.invalid && lName?.errors?.required">
+                        Last Name is
+                        <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+        
+                <div fxLayout="row" fxLayout.sm="row" fxLayout.xs="column" fxLayoutWrap fxLayoutAlign="right">
+                  <div fxFlex="100">
+        
+        
+                    <mat-form-field class="full-width">
+                      <input matInput type="email" formControlName="email" placeholder="Email">
+                    </mat-form-field>
+                  </div>
+                </div>
+        
+                <div fxLayout="row" fxLayout.sm="row" fxLayout.xs="column" fxLayoutWrap fxLayoutAlign="right">
+                  <div fxFlex="50" style="padding-right: 5px;">
+        
+                    <mat-form-field class="full-width">
+                      <mat-label>Mobile</mat-label>
+                      <span matPrefix>+94 &nbsp;</span>
+                      <input type="tel" matInput formControlName="mobile" placeholder="777777777" maxlength="9">
+                    </mat-form-field>
+        
+                  </div>
+                  <div fxFlex="50">
+                    <mat-form-field class="full-width">
+                      <input matInput formControlName="userName" placeholder="User Name">
+                    </mat-form-field>
+        
+                  </div>
+                </div>
+        
+                <div fxLayout="row" fxLayout.sm="row" fxLayout.xs="column" fxLayoutWrap fxLayoutAlign="right">
+                  <div fxFlex="50" style="padding-right: 5px;">
+        
+                    <mat-form-field class="full-width">
+                      <input matInput formControlName="password" type="password" placeholder="Password">
+                      <mat-error *ngIf="SPassword?.touched && SPassword?.invalid && SPassword?.errors?.required">
+                        Password is
+                        <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div fxFlex="50">
+        
+                    <mat-form-field class="full-width">
+                      <input matInput formControlName="passwordConfirm" type="password" placeholder="Confirm Password">
+                      <mat-error *ngIf="passwordConfirm?.touched && SPassword != passwordConfirm">
+                        Password not Matched
+                      </mat-error>
+                    </mat-form-field>
+        
+                  </div>
+                </div>
+        
+              </form>
+        </mat-card-content>
+
+        <mat-card-actions>
+            <div style="display: flex; justify-content: flex-end; align-items: right; margin-bottom: 10px;">
+                <button mat-raised-button class="router-button" (click)="save()" matTooltip="Save">Save</button>
+            </div>
+        </mat-card-actions>
+        
+    
+        </mat-card>
+    </div>

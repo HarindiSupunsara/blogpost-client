@@ -1,0 +1,46 @@
+.router-button {
+    background-color: #cc951e;
+    color: white;
+    height: 40px;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    background: #CCC;
+    background-position: center;
+}
+
+.mat-button-toggle {
+    background-color: rgb(175, 171, 171);
+    color: black(0, 0, 0);
+}
+
+.mat-button-toggle-checked {
+    background-color: #cc951e;
+    color: white;
+}
+
+.example-action-buttons {
+    padding-bottom: 20px;
+  }
+  
+  .example-headers-align .mat-expansion-panel-header-title,
+  .example-headers-align .mat-expansion-panel-header-description {
+    flex-basis: 0;
+    color: #cc951e;
+  }
+  
+  .example-headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+    color: #cc951e;
+  }
+  
+  .example-headers-align .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+
+  .mat-header-row{
+    background-color: rgb(151, 117, 151);
+  }

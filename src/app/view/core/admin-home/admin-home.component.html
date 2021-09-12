@@ -1,0 +1,32 @@
+<mat-toolbar class="header">
+    <span (click)="drawer.toggle()"><img src="assets/images/logo.png" alt="" srcset="" style="width: 120px;height: 60px;"></span>
+    <span class="spacer" style="text-align: center;"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon">
+        <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+            <mat-icon>password</mat-icon>
+            <span>Change Password</span>
+        </button>
+        <button mat-menu-item (click)="logout()">
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
+        </button>
+    </mat-menu>
+</mat-toolbar>
+<mat-drawer-container class="body" autosize>
+    <mat-drawer #drawer class="sidenav" mode="side" opened>
+        <button class="matMenuItem" mat-button routerLink="dashboard">
+            <mat-icon class="matMenuIcon">widgets</mat-icon> Dashboard
+        </button>
+
+         <button class="matMenuItem" mat-button routerLink="admin-manage" *ngIf="sessionStorage.getItem('isSuperAdmin') == 'true'">
+            <mat-icon class="matMenuIcon">person</mat-icon> Manage Admin
+        </button> 
+    </mat-drawer>
+    <div class="sidenav-content">
+        <router-outlet></router-outlet>
+    </div>
+
+</mat-drawer-container>

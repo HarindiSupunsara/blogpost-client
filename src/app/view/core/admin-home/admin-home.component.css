@@ -1,0 +1,44 @@
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    border-bottom: solid 2px #F2BC4A;
+}
+
+.body {
+    position: absolute;
+    top: 70px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    overflow-y: auto;
+}
+
+.sidenav {
+    padding: 20px;
+    width: 210px;
+    border-right: solid 2px #F2BC4A;
+}
+
+.matMenuItem {
+    height: 35px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-style: unset;
+    font-weight: bold;
+    color: #cc951e;
+    width: 100%;
+    text-align: start;
+}
+
+.matMenuItem:hover {
+    background-color: #F2BC4A;
+    color: white;
+    border-radius: 5px;
+    height: 35px;
+}
+
+.matMenuIcon {
+    margin-right: 10px;
+}

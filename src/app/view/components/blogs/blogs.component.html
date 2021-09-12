@@ -1,0 +1,41 @@
+<div [hidden]="!loading" class="loader">
+    <h5>Loading...</h5>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+<div class="content-container" [ngClass]="{'disabled': loading == true}">
+
+    <div fxLayout="row wrap" fxLayout.sm="row wrap" fxLayout.xs="column wrap" fxLayoutWrap fxLayoutAlign="right">
+        <div fxFlex="50"
+            style="padding-right: 5px; padding-bottom: 5px; display: flex; align-items: center; justify-content: center;"
+            *ngFor="let blog of postList">
+            <mat-card class="example-card active" style="width: 100%;height: 85%;" [ngClass]="{'inactive' : blog.postStatus == 'INACTIVE'}">
+                <mat-card-header>
+                    <mat-card-title>{{blog.header}}</mat-card-title>
+                    <mat-card-subtitle>{{blog.categoryName}}</mat-card-subtitle>
+
+                    <!-- <mat-slide-toggle style="position: absolute;right: 10px;top: 40px;" [checked]="blog.status == 1"
+                        (change)="changePostStatus(blog,$event)">
+                    </mat-slide-toggle> -->
+
+                </mat-card-header>
+
+                <mat-card-content>
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;{{blog.description}}
+                    </p>
+                </mat-card-content>
+                <mat-card-actions style="display: flex;justify-content: right;align-items: right;">
+                    <!-- <button mat-icon-button color="accent" aria-label="Example icon button with a home icon"
+                        matTooltip="Edit" routerLink="save-blog/{{blog.id}}">
+                        <mat-icon>edit</mat-icon>
+                    </button> -->
+
+                    <div style="position: absolute;right: 20px;bottom: 10px;">Since {{blog.createDate | date:'yyyy-MM-dd
+                        hh:mm:ss'}}</div>
+
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+    
+</div>

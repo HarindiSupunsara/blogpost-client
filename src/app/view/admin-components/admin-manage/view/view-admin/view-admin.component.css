@@ -1,0 +1,12 @@
+.router-button {
+    background-color: #cc951e;
+    color: white;
+    height: 40px;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    background: #CCC;
+    background-position: center;
+}

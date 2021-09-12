@@ -1,0 +1,26 @@
+<mat-toolbar class="header">
+    <img src="assets/images/logo.png" alt="" srcset="" style="width: 120px;height: 60px;">
+    <span class="spacer" style="text-align: center;"></span>
+
+    <!-- <button mat-flat-button [matMenuTriggerFor]="menu" class="example-icon">
+        <mat-icon>account_circle</mat-icon>
+        My Posts
+    </button> -->
+    <button mat-flat-button class="router-button" routerLink="my-blogs" matTooltip="Add New Admin">My Posts</button>
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon">
+        <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+            <mat-icon>password</mat-icon>
+            <span>Change Password</span>
+        </button>
+        <button mat-menu-item (click)="logout()">
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
+        </button>
+    </mat-menu>
+</mat-toolbar>
+<div style="margin-top: 100px;">
+    <router-outlet></router-outlet>
+</div>

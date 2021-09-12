@@ -1,0 +1,7 @@
+.active{
+    border-top: 5px solid #F2BC4A;
+}
+
+.inactive{
+    border-top: 5px solid #6d1303;
+}

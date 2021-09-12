@@ -1,0 +1,11 @@
+<h2 mat-dialog-title style="text-align: center;border-bottom:solid #C4C4C4 1px">{{modalTitle}}</h2>
+<mat-dialog-content align="center" style="min-width: 250px;max-width: 250px;">
+    <img *ngIf="modelType == 'success'" src="/assets/images/success.png" style="width: 70px; height: 70px;">
+    <img *ngIf="modelType == 'error'" src="/assets/images/error.png" style="width: 70px; height: 70px;"> <br>
+    <img *ngIf="modelType == 'warning'" src="/assets/images/warning.jpg" style="width: 70px; height: 70px;"> <br> {{modelMessage}} <br> {{id}}
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+    <button *ngIf="modelType == 'success'" mat-flat-button mat-dialog-close style="background: #77B43F; color: white" (click)="yesConfirmation();">Ok</button>
+    <button *ngIf="modelType == 'error'" mat-flat-button mat-dialog-close style="background: #AA0001; color: white" (click)="yesConfirmation();">Ok</button>
+    <button *ngIf="modelType == 'warning'" mat-flat-button mat-dialog-close style="background: #FECF00; color: white" (click)="yesConfirmation();">Ok</button>
+</mat-dialog-actions>

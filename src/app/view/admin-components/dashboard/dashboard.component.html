@@ -1,0 +1,35 @@
+<div [hidden]="!loading" class="loader">
+    <h5>Loading...</h5>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+<div class="content-container" [ngClass]="{'disabled': loading == true}">
+    
+    <mat-card class="example-card" style="height: auto;border-top: 5px solid #F2BC4A;">
+        <mat-card-header>
+            <mat-card-title>Pending Posts</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-accordion class="example-headers-align">
+                <mat-expansion-panel *ngFor="let blog of blogList" style="margin-bottom: 10px;">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title style="margin-top: 15px;">
+                      {{blog.userName}}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                      {{blog.createDate | date:'yyyy-MM-dd'}}
+                      <mat-button-toggle-group #group="matButtonToggleGroup" value="{{blog.status}}" style="text-align: center;height: 40px;" (change)="changeBlogStatus(blog,$event)">
+                        <mat-button-toggle value="INACTIVE" aria-label="Text align right">Reject</mat-button-toggle>
+                        <mat-button-toggle value="ACTIVE" aria-label="Text align left">Approve</mat-button-toggle>
+                    </mat-button-toggle-group>
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+              
+                  <div>
+                      {{blog.description}}
+                  </div>
+              
+                </mat-expansion-panel>
+            </mat-accordion>
+        </mat-card-content>
+    </mat-card> 
+</div>
